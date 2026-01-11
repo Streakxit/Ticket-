@@ -202,4 +202,4 @@ async def setup(it):
 
 if __name__ == "__main__":
     keep_alive()
-    bot.run(TOKEN)
+    bot.run(TOKEN
