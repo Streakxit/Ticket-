@@ -13,7 +13,7 @@ import asyncio
 # CONFIGURACIÓN BASE
 # ==========================================
 TOKEN = os.environ.get('TOKEN')
-OWNER_ID = 123456789012345678  # <--- Cambia esto por tu ID de Discord
+OWNER_ID = 1057435948998217778  # <--- Cambia esto por tu ID de Discord
 LICENSES_FILE = "licencias.json"
 CONFIG_FILE = "config_servidores.json"
 STATS_FILE = "stats.json"
