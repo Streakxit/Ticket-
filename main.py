@@ -24,15 +24,19 @@ def run():
 # ==========================================
 # INICIO DEL BOT
 # ==========================================
+intents = discord.Intents.default()
+bot = commands.Bot(command_prefix='!', intents=intents)
+
 if __name__ == "__main__":
     # Iniciamos el servidor web en un hilo separado
     t = Thread(target=run)
-    t.daemon = True # Esto asegura que el hilo muera si el proceso principal muere
+    t.daemon = True  # Esto asegura que el hilo muera si el proceso principal muere
     t.start()
-    
+
     # Iniciamos el bot de Discord
     try:
         print("Intentando conectar a Discord...")
+        TOKEN = os.environ.get('DISCORD_TOKEN')
         bot.run(TOKEN)
     except Exception as e:
         print(f"ERROR AL INICIAR EL BOT: {e}")
