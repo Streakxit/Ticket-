@@ -13,7 +13,7 @@ import asyncio
 # CONFIGURACIÓN BASE
 # ==========================================
 TOKEN = os.environ.get('TOKEN')
-OWNER_ID = 1057435948998217778  # <--- Cambia esto por tu ID de Discord
+OWNER_ID =  1057435948998217778 # <--- Cambia esto por tu ID de Discord
 LICENSES_FILE = "licencias.json"
 CONFIG_FILE = "config_servidores.json"
 STATS_FILE = "stats.json"
@@ -242,7 +242,7 @@ class TicketControlView(discord.ui.View):
         self.add_item(discord.ui.Button(label=cfg["btn_claim_txt"], emoji=cfg["btn_claim_emoji"], style=discord.ButtonStyle.success, custom_id="claim_t"))
         self.add_item(discord.ui.Button(label=cfg["btn_hold_txt"], emoji=cfg["btn_hold_emoji"], style=discord.ButtonStyle.secondary, custom_id="hold_t"))
         self.add_item(discord.ui.Button(label=cfg["btn_add_txt"], emoji=cfg["btn_add_emoji"], style=discord.ButtonStyle.primary, custom_id="add_t"))
-        self.add_item(discord.ui.Button(label=cfg["btn_call_txt"], emoji=cfg["btn_call_emoji"], style=discord.ButtonStyle.warning, custom_id="call_t"))
+        self.add_item(discord.ui.Button(label=cfg["btn_call_txt"], emoji=cfg["btn_call_emoji"], style=discord.ButtonStyle.secondary, custom_id="call_t"))
         self.add_item(discord.ui.Button(label=cfg["btn_close_txt"], emoji=cfg["btn_close_emoji"], style=discord.ButtonStyle.danger, custom_id="close_t"))
 
     async def interaction_check(self, it: discord.Interaction) -> bool:
