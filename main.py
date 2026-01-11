@@ -12,15 +12,31 @@ from threading import Thread
 # SERVIDOR WEB PARA RENDER (KEEP ALIVE)
 # ==========================================
 app = Flask('')
+
 @app.route('/')
-def home(): return "TICKET STREAK.XIT ONLINE"
+def home():
+    return "TICKET STREAK.XIT ONLINE"
 
 def run():
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 8080))
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
 
-def keep_alive():
+# ==========================================
+# INICIO DEL BOT
+# ==========================================
+if __name__ == "__main__":
+    # Iniciamos el servidor web en un hilo separado
     t = Thread(target=run)
+    t.daemon = True # Esto asegura que el hilo muera si el proceso principal muere
     t.start()
+    
+    # Iniciamos el bot de Discord
+    try:
+        print("Intentando conectar a Discord...")
+        bot.run(TOKEN)
+    except Exception as e:
+        print(f"ERROR AL INICIAR EL BOT: {e}")
+
 
 # ==========================================
 # CONFIGURACIÓN BASE
